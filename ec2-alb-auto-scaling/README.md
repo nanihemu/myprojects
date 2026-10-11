@@ -41,7 +41,6 @@ The Auto Scaling Group launches and terminates EC2 instances according to its co
 
 ## User Data Script
 
-Example for Amazon Linux 2023:
 
 ```bash
 #!/bin/bash
@@ -49,17 +48,1104 @@ dnf install -y httpd
 systemctl enable --now httpd
 
 cat > /var/www/html/index.html <<'EOF'
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AWS Auto Scaling Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Virat Kohli biography, cricket records, achievements and career updates.">
+  <title>Virat Kohli Hub | The Run Machine</title>
+
+  <style>
+    :root {
+      --navy: #071a35;
+      --blue: #0875e1;
+      --gold: #ffc83d;
+      --text: #132746;
+      --muted: #60718a;
+      --white: #ffffff;
+      --soft: #f2f6fb;
+      --border: #dfe8f2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    /* Navigation */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      color: white;
+    }
+
+    .navbar {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #edf3ff;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .nav-buttons button {
+      background: transparent;
+      color: white;
+      border: 1px solid #52627a;
+      padding: 8px 11px;
+      border-radius: 8px;
+    }
+
+    #menuButton {
+      display: none;
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(4, 17, 35, 0.97),
+          rgba(4, 17, 35, 0.78),
+          rgba(4, 17, 35, 0.3)
+        ),
+        url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1600&q=85")
+        center / cover;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      padding: 65px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5.7rem);
+      line-height: 1.05;
+      margin: 14px 0;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero h2 {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #dbe5f3;
+      max-width: 480px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #14233a;
+      padding: 12px 19px;
+      border-radius: 8px;
+      font-weight: bold;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: white;
+    }
+
+    /* Statistics */
+
+    section {
+      padding: 55px 0;
+    }
+
+    .stats-section {
+      padding: 25px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 18px 10px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    .stat-icon {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      color: white;
+      background: var(--blue);
+      font-size: 1.2rem;
+    }
+
+    .stat-card:nth-child(2) .stat-icon {
+      background: #25874d;
+    }
+
+    .stat-card:nth-child(3) .stat-icon {
+      background: #7a39a6;
+    }
+
+    .stat-card:nth-child(4) .stat-icon {
+      background: #c83737;
+    }
+
+    .stat-card:nth-child(5) .stat-icon {
+      background: #bc8111;
+    }
+
+    .stat-card:nth-child(6) .stat-icon {
+      background: #168da2;
+    }
+
+    .stat-card h3 {
+      font-size: 1.65rem;
+      line-height: 1.3;
+    }
+
+    .stat-card p {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: bold;
+    }
+
+    /* Section headings */
+
+    .section-heading {
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      line-height: 1.3;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.2fr 0.95fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .about-image {
+      min-height: 330px;
+      border-radius: 14px;
+      background:
+        url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=85")
+        center / cover;
+    }
+
+    .about-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin-bottom: 13px;
+    }
+
+    .bio-list {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px 12px;
+      margin: 18px 0;
+      font-size: 0.9rem;
+    }
+
+    .bio-list dt {
+      font-weight: bold;
+    }
+
+    .bio-list dd {
+      color: var(--muted);
+    }
+
+    .highlights {
+      padding: 22px;
+      border-radius: 14px;
+      background: #edf5ff;
+      border: 1px solid #dcecff;
+    }
+
+    .highlights h3 {
+      margin-bottom: 15px;
+    }
+
+    .highlights ul {
+      list-style: none;
+    }
+
+    .highlights li {
+      margin: 12px 0;
+      font-size: 0.9rem;
+    }
+
+    .check {
+      color: var(--blue);
+      font-weight: bold;
+      margin-right: 7px;
+    }
+
+    .quote {
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+      font-style: italic;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    /* Records */
+
+    .records-section {
+      background: var(--soft);
+    }
+
+    .records-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .record-card {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .record-icon {
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      background: #edf5ff;
+      color: var(--blue);
+      border-radius: 10px;
+      font-size: 1.35rem;
+    }
+
+    .record-card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .record-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* Status */
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .status-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(9, 32, 65, 0.05);
+    }
+
+    .status-tag {
+      display: inline-block;
+      background: #e7f4ec;
+      color: #237345;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .status-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .status-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 18px;
+    }
+
+    /* Videos */
+
+    .videos-section {
+      background: #f8fafc;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+
+    .video-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-image {
+      min-height: 160px;
+      display: grid;
+      place-items: center;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .video-image span {
+      background: rgba(0, 0, 0, 0.55);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    .video-info {
+      padding: 15px;
+    }
+
+    .video-info h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .video-info p {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+
+    footer {
+      background: var(--navy);
+      color: #d9e4f4;
+      padding: 28px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* Back-to-top button */
+
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      font-size: 1.3rem;
+      z-index: 50;
+    }
+
+    #backToTop.visible {
+      display: block;
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 1000px) {
+      .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .highlights {
+        grid-column: 1 / -1;
+      }
+
+      .records-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: 92%;
+      }
+
+      .navbar {
+        min-height: 65px;
+      }
+
+      .logo {
+        font-size: 1rem;
+      }
+
+      #menuButton {
+        display: inline-block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        padding: 15px 4%;
+        background: var(--navy);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+        border-bottom: 1px solid #34465f;
+      }
+
+      .hero {
+        min-height: 410px;
+        background-position: center;
+      }
+
+      .hero-content {
+        padding: 50px 0;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .stat-card {
+        padding: 14px 7px;
+      }
+
+      .stat-card h3 {
+        font-size: 1.4rem;
+      }
+
+      .about-grid,
+      .records-grid,
+      .status-grid,
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlights {
+        grid-column: auto;
+      }
+
+      .about-image {
+        min-height: 260px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Welcome to My AWS Website</h1>
-    <p>Hosted on Amazon EC2.</p>
-    <p>Provisioned using Launch Template User Data.</p>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container navbar">
+      <a href="#home" class="logo">♛ VIRAT KOHLI <span>HUB</span></a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#records">Records</a>
+        <a href="#videos">Videos</a>
+        <a href="#status">Status</a>
+      </nav>
+
+      <div class="nav-buttons">
+        <button id="themeButton" type="button" aria-label="Toggle theme">◐</button>
+        <button id="menuButton" type="button"
+          aria-label="Open navigation" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Legend · Passion · Inspiration</div>
+          <h1>VIRAT <span>KOHLI</span></h1>
+          <h2>The Run Machine</h2>
+          <p>
+            A fan-made tribute to the Indian cricket star known for his
+            intensity, consistency and passion for the game.
+          </p>
+          <a href="#about" class="btn">Explore His Journey →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics section -->
+    <section class="stats-section">
+      <div class="container stats-grid">
+
+        <article class="stat-card">
+          <div class="stat-icon">🏏</div>
+          <h3>86</h3>
+          <p>Career Centuries*</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon">◉</div>
+          <h3>55</h3>
+          <p>ODI Centuries*</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon">◉</div>
+          <h3>30</h3>
+          <p>Test Centuries*</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon">◉</div>
+          <h3>1</h3>
+          <p>T20I Century*</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon">🏆</div>
+          <h3>Elite</h3>
+          <p>Run Scorer</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon">★</div>
+          <h3>India</h3>
+          <p>International Cricket</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About Virat Kohli</h2>
+          <p>Meet the player behind the records.</p>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-image"
+            role="img"
+            aria-label="Cricket stadium photograph">
+          </div>
+
+          <div class="about-content">
+            <h3>A Journey Built on Discipline</h3>
+
+            <p>
+              Virat Kohli is an Indian international cricketer celebrated
+              for his competitive spirit, batting consistency and
+              commitment to fitness.
+            </p>
+
+            <p>
+              From his early days in Delhi to leading India on the
+              international stage, his career has featured memorable
+              run chases, tournament performances and batting milestones.
+            </p>
+
+            <dl class="bio-list">
+              <dt>Full Name</dt>
+              <dd>Virat Prem Kohli</dd>
+
+              <dt>Born</dt>
+              <dd>5 November 1988</dd>
+
+              <dt>Birthplace</dt>
+              <dd>Delhi, India</dd>
+
+              <dt>Role</dt>
+              <dd>Top-order Batter</dd>
+
+              <dt>Batting Style</dt>
+              <dd>Right-handed</dd>
+            </dl>
+
+            <a href="#status" class="btn btn-blue">
+              Career Highlights →
+            </a>
+          </div>
+
+          <aside class="highlights">
+            <h3>🏆 Career Highlights</h3>
+
+            <ul>
+              <li><span class="check">✓</span> Former India captain</li>
+              <li><span class="check">✓</span> ICC Men's Cricketer of the Year in 2017 and 2018</li>
+              <li><span class="check">✓</span> Recipient of the Padma Shri in 2017</li>
+              <li><span class="check">✓</span> Known for high-pressure run chases</li>
+              <li><span class="check">✓</span> One of his generation's leading batters</li>
+            </ul>
+
+            <div class="quote">
+              “Self-belief and hard work will always earn you success.”
+              <br><strong>— Fan-site inspiration quote</strong>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Records section -->
+    <section class="records-section" id="records">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Records & Milestones</h2>
+          <p>Some memorable achievements from his cricket career.</p>
+        </div>
+
+        <div class="records-grid">
+
+          <article class="record-card">
+            <div class="record-icon">🏏</div>
+            <div>
+              <h3>ODI Run-Scoring Milestones</h3>
+              <p>Among the most prolific batters in one-day international cricket.</p>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="record-icon">★</div>
+            <div>
+              <h3>Century Maker</h3>
+              <p>Known for converting strong starts into match-defining hundreds.</p>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="record-icon">♛</div>
+            <div>
+              <h3>Big-Match Performer</h3>
+              <p>Memorable innings in major tournaments and run chases.</p>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="record-icon">↗</div>
+            <div>
+              <h3>Chase Specialist</h3>
+              <p>Recognized for pacing difficult targets and finishing games.</p>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="record-icon">🏆</div>
+            <div>
+              <h3>Multiple-Format Success</h3>
+              <p>Built an outstanding international career across formats.</p>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="record-icon">🔥</div>
+            <div>
+              <h3>Fitness & Consistency</h3>
+              <p>Known for disciplined preparation and a competitive mindset.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="note">
+          *The century figures are sample values supplied for this project.
+          Verify current figures against official statistics before publishing.
+        </p>
+
+        <p style="margin-top: 12px">
+          <a class="btn btn-blue"
+             href="https://www.espncricinfo.com/cricketers/virat-kohli-253802"
+             target="_blank" rel="noopener noreferrer">
+            View Cricket Profile ↗
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Status section -->
+    <section id="status">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Career Status & Updates</h2>
+          <p>A place for current news, milestones and fan updates.</p>
+        </div>
+
+        <div class="status-grid">
+
+          <article class="status-card">
+            <span class="status-tag">CAREER</span>
+            <h3>🇮🇳 International Cricket</h3>
+            <p>
+              Follow his latest appearances, performances and milestones
+              for India through official cricket sources.
+            </p>
+          </article>
+
+          <article class="status-card">
+            <span class="status-tag">LEAGUE</span>
+            <h3>🏏 Indian Premier League</h3>
+            <p>
+              Add the latest season news, team updates, match performances
+              and batting records here.
+            </p>
+          </article>
+
+          <article class="status-card">
+            <span class="status-tag">LATEST NEWS</span>
+            <h3>📣 Recent Updates</h3>
+            <p>
+              Check official team and tournament channels for verified
+              announcements and current statistics.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="note">
+          These status cards are static and must be updated manually.
+          They do not display live news.
+        </p>
+
+        <p style="margin-top: 15px">
+          <a class="btn btn-blue"
+             href="https://www.bcci.tv/"
+             target="_blank" rel="noopener noreferrer">
+            Visit Official BCCI Website ↗
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Videos section -->
+    <section class="videos-section" id="videos">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Video & Highlights</h2>
+          <p>Explore batting highlights, interviews and memorable innings.</p>
+        </div>
+
+        <div class="videos-grid">
+
+          <a class="video-card"
+             href="https://www.youtube.com/results?search_query=Virat+Kohli+batting+highlights"
+             target="_blank" rel="noopener noreferrer">
+            <div class="video-image"
+              style="background-image:url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=700&q=80')">
+              <span>▶</span>
+            </div>
+            <div class="video-info">
+              <h3>Batting Highlights</h3>
+              <p>Watch batting moments on YouTube ↗</p>
+            </div>
+          </a>
+
+          <a class="video-card"
+             href="https://www.youtube.com/results?search_query=Virat+Kohli+centuries"
+             target="_blank" rel="noopener noreferrer">
+            <div class="video-image"
+              style="background-image:url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=700&q=80')">
+              <span>▶</span>
+            </div>
+            <div class="video-info">
+              <h3>Centuries & Records</h3>
+              <p>Explore milestone innings ↗</p>
+            </div>
+          </a>
+
+          <a class="video-card"
+             href="https://www.youtube.com/results?search_query=Virat+Kohli+interview"
+             target="_blank" rel="noopener noreferrer">
+            <div class="video-image"
+              style="background-image:url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=700&q=80')">
+              <span>▶</span>
+            </div>
+            <div class="video-info">
+              <h3>Interviews</h3>
+              <p>Preparation and mindset ↗</p>
+            </div>
+          </a>
+
+          <a class="video-card"
+             href="https://www.youtube.com/results?search_query=Virat+Kohli+World+Cup+highlights"
+             target="_blank" rel="noopener noreferrer">
+            <div class="video-image"
+              style="background-image:url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80')">
+              <span>▶</span>
+            </div>
+            <div class="video-info">
+              <h3>Tournament Moments</h3>
+              <p>Relive major-match highlights ↗</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <p>
+        © <span id="year"></span>
+        <strong>Virat Kohli Hub</strong>. Fan-made learning project.
+      </p>
+
+      <p>Passion · Performance · Legacy</p>
+
+      <div class="footer-links">
+        <a href="#home">Back to Top ↑</a>
+        <a href="https://www.bcci.tv/" target="_blank"
+           rel="noopener noreferrer">BCCI ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top">↑</button>
+
+  <script>
+    // Mobile navigation
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuButton.textContent = isOpen ? "✕" : "☰";
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
+    });
+
+    // Close mobile menu after selecting a section
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuButton.textContent = "☰";
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Theme toggle
+    const themeButton = document.getElementById("themeButton");
+
+    themeButton.addEventListener("click", function () {
+      const isLight = document.body.classList.toggle("light-mode");
+
+      if (isLight) {
+        document.body.style.backgroundColor = "#ffffff";
+        document.body.style.color = "#132746";
+        document.querySelector("header").style.backgroundColor = "#eaf1fa";
+        document.querySelector("header").style.color = "#132746";
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+          link.style.color = "#132746";
+        });
+        themeButton.textContent = "☀";
+      } else {
+        document.body.style.backgroundColor = "#ffffff";
+        document.body.style.color = "#132746";
+        document.querySelector("header").style.backgroundColor = "#071a35";
+        document.querySelector("header").style.color = "#ffffff";
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+          link.style.color = "#edf3ff";
+        });
+        themeButton.textContent = "◐";
+      }
+    });
+
+    // Back-to-top button
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", function () {
+      backToTop.classList.toggle("visible", window.scrollY > 400);
+    });
+
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    // Automatically display current year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
 </body>
 </html>
+
 EOF
 ```
 
