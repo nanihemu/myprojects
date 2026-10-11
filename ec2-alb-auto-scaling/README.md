@@ -10,7 +10,7 @@ AWS resources are configured through the AWS Management Console.
 
 ## Architecture
 
-![AWS EC2 ALB Auto Scaling Architecture](docs/architecture.png)
+![AWS EC2 ALB Auto Scaling Architecture](docs/architecture/architecture.png)
 
 **Request flow:**
 
