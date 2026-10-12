@@ -242,18 +242,5 @@ By completing this project, I gained practical experience with:
 - EC2 start and stop API operations using `boto3`.
 - CloudWatch Logs and troubleshooting.
 - Scheduling cloud operations to help manage AWS resource usage.
-
-## Cleanup
-
-After testing:
-
-1. Disable or delete EventBridge schedules that are no longer needed.
-2. Delete the Lambda function if it is no longer required.
-3. Remove unused IAM roles and policies after confirming that no other resources depend on them.
-4. Stop or terminate the EC2 lab instance as appropriate.
-
-Review AWS pricing before leaving resources running.
-
-## Author
-
+  
 Cloud and DevOps learner | AWS | Linux | Python | Automation | CI/CD
