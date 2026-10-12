@@ -221,17 +221,6 @@ Choose the appropriate time for stopping the instance and use the Scheduler exec
 - Review CloudWatch Logs for errors and unexpected behavior.
 - Disable or delete schedules when the automation is no longer required.
 
-## Troubleshooting
-
-| Problem | What to check |
-|---|---|
-| Scheduler cannot invoke Lambda | Scheduler execution role trust policy and `lambda:InvokeFunction` permission |
-| Lambda returns `AccessDenied` | Lambda execution role's EC2 permissions |
-| Instance ID is invalid | Confirm the instance ID and Region |
-| Lambda fails during execution | Review CloudWatch Logs and the test event |
-| Instance does not start or stop | Check the current EC2 state and the API error |
-| Schedule runs at the wrong time | Check the configured time zone and schedule expression |
-
 ## Learning Outcomes
 
 By completing this project, I gained practical experience with:
